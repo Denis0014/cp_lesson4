@@ -1,16 +1,18 @@
-## MiniMaple
+# MiniMaple
 
 Write the symbolic diff function
 
 Example:
-```
-4*x^3, x //=> 12*x^2
 
-4*x^3, y // => 0
+```text
+    4*x^3, x //=> 12*x^2
 
-4*x^3-x^2, x //=> 12*x^2 - 2*x 
+    4*x^3, y // => 0
+
+    4*x^3-x^2, x //=> 12*x^2 - 2*x 
 ```
-Allowed operations are +, -,* and ^.
+
+Allowed operations are +, -, * and ^.
 
 The program has to handle polynomials, other functions are optional.
 
