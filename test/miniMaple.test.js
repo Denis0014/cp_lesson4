@@ -1,4 +1,4 @@
-import { MiniMaple, diff } from '../src/miniMaple';
+import { diff } from '../src/miniMaple';
 
 test.each([
     ['4*x^3', 'x', '12*x^2'],
@@ -21,7 +21,7 @@ test.each([
     ['foo^2', 'foo', '2*foo'],
     ['x^2^3', 'x', '8*x^7'],
 ])('diff(%s, %s) = %s', (expression, variable, expected) => {
-    expect(MiniMaple.diff(expression, variable)).toBe(expected);
+    expect(diff(expression, variable)).toBe(expected);
 });
 
 test('exports diff for direct use', () => {
@@ -30,9 +30,9 @@ test('exports diff for direct use', () => {
 
 test.each(['x/2', 'sin(x)', 'x^y', 'x^-1', 'x^0.5', 'x+', '(x', 'x)', '2x', '', 'x%2', 'x=1'])
 ('rejects invalid or unsupported expression %s', expression => {
-    expect(() => MiniMaple.diff(expression, 'x')).toThrow();
+    expect(() => diff(expression, 'x')).toThrow();
 });
 
 test.each(['', 'x+y', '2', undefined])('rejects invalid variable %s', variable => {
-    expect(() => MiniMaple.diff('x', variable)).toThrow();
+    expect(() => diff('x', variable)).toThrow();
 });
